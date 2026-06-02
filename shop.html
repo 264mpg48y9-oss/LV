@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>.products{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px 0 80px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.price{
+    color:#b8860b;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Sole | Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f8f5ef;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.cart{
+    background:#c9a96e;
+    color:black;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.page-title{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.page-title h1{
+    font-size:50px;
+}
+
+.products{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#c9a96e;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#111;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#333;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ELITE SOLE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <div class="cart">
+        Cart: <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section class="page-title">
+    <h1>Luxury Sneaker Collection</h1>
+    <p>Exclusive Designer Footwear</p>
+</section>
+
+<section class="products">
+
+    <!-- Nike -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800" alt="Nike Air Max">
+        <div class="card-content">
+            <h3>Nike Air Max 270</h3>
+            <div class="price">$150</div>
+            <button onclick="addToCart('Nike Air Max 270',150)">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Adidas -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=800" alt="Adidas Ultraboost">
+        <div class="card-content">
+            <h3>Adidas Ultraboost</h3>
+            <div class="price">$180</div>
+            <button onclick="addToCart('Adidas Ultraboost',180)">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Jordan -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800" alt="Air Jordan 1">
+        <div class="card-content">
+            <h3>Air Jordan 1 Mid</h3>
+            <div class="price">$140</div>
+            <button onclick="addToCart('Air Jordan 1 Mid',140)">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- New Balance -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800" alt="New Balance 550">
+        <div class="card-content">
+            <h3>New Balance 550</h3>
+            <div class="price">$120</div>
+            <button onclick="addToCart('New Balance 550',120)">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Puma -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800" alt="Puma RS-X">
+        <div class="card-content">
+            <h3>Puma RS-X</h3>
+            <div class="price">$110</div>
+            <button onclick="addToCart('Puma RS-X',110)">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+
+</section>
+<footer>
+    © 2026 Elite Sole Luxury Sneakers
+</footer>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    document.getElementById("cart-count").innerText = cart.length;
+
+    alert(name + " added to cart");
+}
+
+document.getElementById("cart-count").innerText = cart.length;
+</script>
+
+</body>
+</html>
