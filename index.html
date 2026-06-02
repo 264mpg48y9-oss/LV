@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Sole | Luxury Sneakers</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial',sans-serif;
+}
+
+body{
+    background:#f8f5ef;
+    color:#111;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:15px;
+}
+
+.cart{
+    background:#c9a96e;
+    color:#111;
+    padding:8px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.6);
+    color:white;
+    padding:40px;
+    border-radius:15px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#c9a96e;
+    color:#111;
+    padding:15px 30px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:30px;
+}
+
+.section-title{
+    text-align:center;
+    padding:70px 20px 40px;
+    font-size:40px;
+}
+
+.products{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding-bottom:80px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:22px;
+    color:#c9a96e;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.card button{
+    width:100%;
+    padding:12px;
+    background:#111;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ELITE SOLE</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="cart">
+        Cart (<span id="cart-count">0</span>)
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Luxury Sneakers</h1>
+        <p>Crafted for Style. Designed for Prestige.</p>
+        <a href="#shop" class="btn">Shop Collection</a>
+    </div>
+</section>
+
+<h2 class="section-title" id="shop">Featured Collection</h2>
+
+<section class="products">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800" alt="">
+        <div class="card-content">
+            <h3>Monogram Runner</h3>
+            <div class="price">$1,250</div>
+            <button onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800" alt="">
+        <div class="card-content">
+            <h3>Elite Street Trainer</h3>
+            <div class="price">$1,480</div>
+            <button onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800" alt="">
+        <div class="card-content">
+            <h3>Signature High Top</h3>
+            <div class="price">$1,690</div>
+            <button onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Elite Sole. All Rights Reserved.
+</footer>
+
+<script>
+let cart = 0;
+
+function addToCart(){
+    cart++;
+    document.getElementById("cart-count").innerText = cart;
+}
+</script>
+
+</body>
+</html>
