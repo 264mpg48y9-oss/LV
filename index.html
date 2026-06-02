@@ -161,9 +161,13 @@ footer{
         <a href="#">Contact</a>
     </nav>
 
-    <div class="cart">
-        Cart (<span id="cart-count">0</span>)
-    </div>
+    <<a href="cart.html">
+    Cart (<span id="cart-count">0</span>)
+</a><script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+document.getElementById("cart-count").innerText = cart.length;
+</script>
 </header>
 
 <section class="hero">
